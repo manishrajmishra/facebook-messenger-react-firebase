@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     db.collection("messages")
-      .orderBy("timestamp", "asc")
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         setMessages(
           snapshot.docs.map((doc) => ({ id: doc.id, message: doc.data() }))
@@ -41,6 +41,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <img src="https://www.facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100" />
       <h1>Welcome to Chat Room, {username}</h1>
 
       <form className="app__form">
