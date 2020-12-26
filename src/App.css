@@ -13,13 +13,12 @@
 }
 
 .app__formControl {
-  display: flex;
-  flex-direction: row;
+  display: flex !important;
+  flex-direction: row !important;
 }
 
 .app__input {
   flex: 0.9;
-  color: rgb(0, 0, 0);
 }
 
 .app__iconButton {

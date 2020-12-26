@@ -41,7 +41,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Welcome {username}</h1>
+      <h1>Welcome to Chat Room, {username}</h1>
 
       <form className="app__form">
         <FormControl className="app__formControl">
