@@ -3,7 +3,7 @@ import { Button, FormControl, Input, InputLabel } from "@material-ui/core";
 import "./styles.css";
 import Message from "./Message";
 import db from "./firebase";
-// import firebase from "firebase";
+import firebase from "firebase";
 
 export default function App() {
   const [input, setInput] = useState("");
@@ -11,10 +11,12 @@ export default function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    db.collection('message').onSnapshot(snapshot => {
-      setMessages(snapshot.docs.map(doc => doc.data()))
-    })
-  }, [])
+    db.collection("messages")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) => {
+        setMessages(snapshot.docs.map((doc) => doc.data()));
+      });
+  }, []);
 
   useEffect(() => {
     setUsername(prompt("Please Enter Your Name"));
@@ -23,7 +25,14 @@ export default function App() {
   const sendMessage = (event) => {
     //all the logic to send a message goes here
     event.preventDefault();
-    setMessages([...messages, { username: username, text: input }]);
+
+    db.collection("messages").add({
+      message: input,
+      username: username,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    // setMessages([...messages, { username: username, text: input }]);
     setInput("");
   };
 
