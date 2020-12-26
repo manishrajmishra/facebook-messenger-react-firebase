@@ -8,7 +8,6 @@
   position: fixed;
   bottom: 0;
   z-index: 1;
-  /* background-color: #e9e9eb; */
   width: 100%;
   margin: 20px;
 }
@@ -19,8 +18,8 @@
 }
 
 .app__input {
-  flex: 1;
-  color: sienna;
+  flex: 0.9;
+  color: rgb(0, 0, 0);
 }
 
 .app__iconButton {

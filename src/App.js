@@ -35,7 +35,6 @@ export default function App() {
       username: username,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
-
     // setMessages([...messages, { username: username, text: input }]);
     setInput("");
   };
