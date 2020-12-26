@@ -1,2 +1,2 @@
-# facebook-messenger-react-firebase
+# Quiz-React
 Created with CodeSandbox
