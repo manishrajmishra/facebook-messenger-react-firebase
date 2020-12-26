@@ -6,9 +6,12 @@ export default function App() {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
+  console.log(input);
+  console.log(messages);
+
   const sendMessage = (event) => {
     //all the logic to send a message goes here
-    event.preventDeafault();
+    event.preventDefault();
     setMessages([...messages, input]);
     setInput("");
   };
