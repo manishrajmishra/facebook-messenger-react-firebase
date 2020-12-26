@@ -14,8 +14,8 @@
 }
 
 .app__formControl {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
 }
 
 .app__input {
