@@ -49,14 +49,17 @@ export default function App() {
   return (
     <div className="App">
       <h1>Welcome {username}</h1>
+
       <form className="app__form">
-        <FormControl>
-          <InputLabel>Enter the messages....</InputLabel>
+        <FormControl className="app__formControl">
           <Input
+            className="app__input"
+            placeholder="Enter the messages...."
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
           <IconButton
+            className="app__iconButton"
             disabled={!input}
             variant="contained"
             color="primary"
